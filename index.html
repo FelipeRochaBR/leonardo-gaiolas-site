@@ -7,6 +7,48 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <style>
+        :root {
+            --color-primary: #2b7a9b;
+            --color-primary-dark: #1f5a75;
+            --color-text: #2d3436;
+            --color-text-light: #636e72;
+            --color-bg: #fafbfc;
+            --color-bg-white: white;
+            --color-border: #e0e0e0;
+            --color-border-light: #f0f0f0;
+            --color-instagram: #c13584;
+            --color-tiktok: #25F4EE;
+            --color-whatsapp: #25D366;
+
+            --spacing-xs: 8px;
+            --spacing-sm: 16px;
+            --spacing-md: 24px;
+            --spacing-lg: 40px;
+            --spacing-xl: 80px;
+            --spacing-2xl: 100px;
+            --spacing-3xl: 120px;
+            --spacing-4xl: 140px;
+
+            --font-size-xs: 12px;
+            --font-size-sm: 13px;
+            --font-size-base: 14px;
+            --font-size-md: 15px;
+            --font-size-lg: 18px;
+            --font-size-xl: 48px;
+            --font-size-2xl: 64px;
+
+            --radius-sm: 6px;
+            --radius-md: 8px;
+            --radius-lg: 14px;
+            --radius-xl: 20px;
+            --radius-full: 50%;
+
+            --transition-default: 0.3s ease;
+            --shadow-sm: 0 8px 20px;
+            --shadow-md: 0 12px 32px;
+            --shadow-lg: 0 20px 50px;
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -15,27 +57,28 @@
 
         body {
             font-family: 'Poppins', sans-serif;
-            color: #2d3436;
-            background: #fafbfc;
+            color: var(--color-text);
+            background: var(--color-bg);
             line-height: 1.6;
         }
 
         header {
-            background: white;
-            padding: 16px 80px;
+            background: var(--color-bg-white);
+            padding: var(--spacing-sm) var(--spacing-xl);
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 1px solid #f0f0f0;
+            border-bottom: 1px solid var(--color-border-light);
             position: sticky;
             top: 0;
             z-index: 100;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
         }
 
         .logo {
             display: flex;
             align-items: center;
-            gap: 16px;
+            gap: var(--spacing-md);
         }
 
         .logo img {
@@ -52,10 +95,10 @@
 
         nav a {
             text-decoration: none;
-            color: #2d3436;
-            font-size: 13px;
+            color: var(--color-text);
+            font-size: var(--font-size-sm);
             font-weight: 500;
-            transition: all 0.3s ease;
+            transition: color var(--transition-default);
             letter-spacing: 0.5px;
             position: relative;
         }
@@ -67,8 +110,8 @@
             left: 0;
             width: 0;
             height: 2px;
-            background: #2b7a9b;
-            transition: width 0.3s ease;
+            background: var(--color-primary);
+            transition: width var(--transition-default);
         }
 
         nav a:hover::after {
@@ -77,80 +120,86 @@
 
         .header-right {
             display: flex;
-            gap: 24px;
+            gap: var(--spacing-md);
             align-items: center;
         }
 
         .social {
             display: flex;
-            gap: 10px;
+            gap: var(--spacing-xs);
         }
 
         .social a {
             font-size: 16px;
-            transition: all 0.3s ease;
+            transition: background var(--transition-default), color var(--transition-default), transform var(--transition-default), box-shadow var(--transition-default), border-color var(--transition-default);
             width: 40px;
             height: 40px;
             display: flex;
             align-items: center;
             justify-content: center;
-            border-radius: 50%;
-            background: white;
-            border: 2px solid #e0e0e0;
-            color: #2d3436;
+            border-radius: var(--radius-full);
+            background: var(--color-bg-white);
+            border: 2px solid var(--color-border);
+            color: var(--color-text);
+            text-decoration: none;
         }
 
         .social a[href*="instagram"]:hover {
             background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
-            border-color: #c13584;
-            color: white;
+            border-color: var(--color-instagram);
+            color: var(--color-bg-white);
             transform: translateY(-3px) scale(1.1);
-            box-shadow: 0 8px 20px rgba(193, 53, 132, 0.3);
+            box-shadow: var(--shadow-sm) rgba(193, 53, 132, 0.3);
         }
 
         .social a[href*="tiktok"]:hover {
-            background: linear-gradient(135deg, #25F4EE 0%, #6A5ACD 100%);
-            border-color: #25F4EE;
-            color: white;
+            background: linear-gradient(135deg, var(--color-tiktok) 0%, #6A5ACD 100%);
+            border-color: var(--color-tiktok);
+            color: var(--color-bg-white);
             transform: translateY(-3px) scale(1.1);
-            box-shadow: 0 8px 20px rgba(37, 244, 238, 0.3);
+            box-shadow: var(--shadow-sm) rgba(37, 244, 238, 0.3);
         }
 
         .social a[href*="whatsapp"]:hover {
-            background: #25D366;
-            border-color: #25D366;
-            color: white;
+            background: var(--color-whatsapp);
+            border-color: var(--color-whatsapp);
+            color: var(--color-bg-white);
             transform: translateY(-3px) scale(1.1);
-            box-shadow: 0 8px 20px rgba(37, 211, 102, 0.3);
+            box-shadow: var(--shadow-sm) rgba(37, 211, 102, 0.3);
         }
 
         .cart {
             font-size: 18px;
-            color: #2d3436;
+            color: var(--color-text);
             cursor: pointer;
+            transition: transform var(--transition-default);
+        }
+
+        .cart:hover {
+            transform: scale(1.1);
         }
 
         .hero {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 100px;
+            gap: var(--spacing-2xl);
             align-items: center;
-            padding: 140px 80px;
-            background: linear-gradient(135deg, #fafbfc 0%, #f5f8fb 100%);
+            padding: var(--spacing-4xl) var(--spacing-xl);
+            background: linear-gradient(135deg, var(--color-bg) 0%, #f5f8fb 100%);
         }
 
         .hero-left h1 {
             font-family: 'Playfair Display', serif;
-            font-size: 64px;
-            color: #2d3436;
-            margin-bottom: 24px;
+            font-size: var(--font-size-2xl);
+            color: var(--color-text);
+            margin-bottom: var(--spacing-md);
             line-height: 1.15;
             font-weight: 700;
         }
 
         .hero-left p {
-            font-size: 15px;
-            color: #636e72;
+            font-size: var(--font-size-md);
+            color: var(--color-text-light);
             margin-bottom: 45px;
             line-height: 1.9;
             font-weight: 400;
@@ -158,146 +207,157 @@
 
         .hero-buttons {
             display: flex;
-            gap: 16px;
+            gap: var(--spacing-sm);
         }
 
         .btn {
             padding: 14px 34px;
             border: none;
-            border-radius: 6px;
-            font-size: 13px;
+            border-radius: var(--radius-sm);
+            font-size: var(--font-size-sm);
             font-weight: 600;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: background var(--transition-default), color var(--transition-default), transform var(--transition-default), box-shadow var(--transition-default), border-color var(--transition-default);
             text-decoration: none;
             display: inline-block;
             letter-spacing: 0.4px;
         }
 
         .btn-primary {
-            background: #2b7a9b;
-            color: white;
+            background: var(--color-primary);
+            color: var(--color-bg-white);
         }
 
         .btn-primary:hover {
-            background: #1f5a75;
+            background: var(--color-primary-dark);
             transform: translateY(-4px);
-            box-shadow: 0 12px 32px rgba(43, 122, 155, 0.25);
+            box-shadow: var(--shadow-md) rgba(43, 122, 155, 0.25);
         }
 
         .btn-secondary {
-            background: white;
-            color: #2b7a9b;
-            border: 2px solid #2b7a9b;
+            background: var(--color-bg-white);
+            color: var(--color-primary);
+            border: 2px solid var(--color-primary);
         }
 
         .btn-secondary:hover {
-            background: #2b7a9b;
-            color: white;
+            background: var(--color-primary);
+            color: var(--color-bg-white);
             transform: translateY(-4px);
-            box-shadow: 0 12px 32px rgba(43, 122, 155, 0.15);
+            box-shadow: var(--shadow-md) rgba(43, 122, 155, 0.15);
+        }
+
+        .btn-full-width {
+            width: 100%;
         }
 
         .hero-right {
             width: 100%;
             height: 480px;
             background: linear-gradient(135deg, #e8ddd0 0%, #f5efe6 100%);
-            border-radius: 20px;
+            border-radius: var(--radius-xl);
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 24px;
             color: #d4c4b0;
             font-weight: 500;
+            box-shadow: var(--shadow-lg) rgba(0, 0, 0, 0.08);
         }
 
         section {
-            padding: 120px 80px;
+            padding: var(--spacing-3xl) var(--spacing-xl);
         }
 
         section h2 {
             font-family: 'Playfair Display', serif;
-            font-size: 48px;
-            color: #2d3436;
-            margin-bottom: 12px;
+            font-size: var(--font-size-xl);
+            color: var(--color-text);
+            margin-bottom: var(--spacing-sm);
             font-weight: 700;
         }
 
         .section-subtitle {
-            font-size: 15px;
-            color: #636e72;
+            font-size: var(--font-size-md);
+            color: var(--color-text-light);
             margin-bottom: 70px;
             font-weight: 400;
         }
 
         #produtos {
-            background: white;
+            background: var(--color-bg-white);
         }
 
         .products-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 40px;
+            gap: var(--spacing-lg);
         }
 
         .product-card {
             text-align: center;
             padding: 48px 32px;
-            border-radius: 14px;
-            background: #fafbfc;
-            transition: all 0.3s ease;
-            border: 1px solid #f0f0f0;
+            border-radius: var(--radius-lg);
+            background: var(--color-bg);
+            transition: background var(--transition-default), transform var(--transition-default), box-shadow var(--transition-default), border-color var(--transition-default);
+            border: 1px solid var(--color-border-light);
         }
 
         .product-card:hover {
-            background: white;
+            background: var(--color-bg-white);
             transform: translateY(-12px);
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
-            border-color: #2b7a9b;
+            box-shadow: var(--shadow-lg) rgba(0, 0, 0, 0.1);
+            border-color: var(--color-primary);
         }
 
         .product-icon {
             font-size: 56px;
-            margin-bottom: 24px;
+            margin-bottom: var(--spacing-md);
         }
 
         .product-card h3 {
-            color: #2d3436;
+            color: var(--color-text);
             margin-bottom: 14px;
-            font-size: 18px;
+            font-size: var(--font-size-lg);
             font-weight: 600;
         }
 
         .product-card p {
-            color: #636e72;
-            font-size: 13px;
+            color: var(--color-text-light);
+            font-size: var(--font-size-sm);
             line-height: 1.9;
         }
 
         #sobre {
-            background: #fafbfc;
+            background: var(--color-bg);
         }
 
         .about-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 100px;
+            gap: var(--spacing-2xl);
             align-items: center;
         }
 
         .about-text p {
             margin-bottom: 22px;
-            color: #636e72;
-            font-size: 15px;
+            color: var(--color-text-light);
+            font-size: var(--font-size-md);
             line-height: 1.9;
         }
 
         .about-text h3 {
-            color: #2d3436;
+            color: var(--color-text);
             margin-top: 38px;
             margin-bottom: 22px;
             font-weight: 600;
-            font-size: 17px;
+            font-size: var(--font-size-lg);
+        }
+
+        .about-image {
+            text-align: center;
+            font-size: 100px;
+            line-height: 1;
         }
 
         .about-list {
@@ -308,21 +368,21 @@
             padding: 11px 0;
             padding-left: 32px;
             position: relative;
-            color: #636e72;
-            font-size: 14px;
+            color: var(--color-text-light);
+            font-size: var(--font-size-base);
             font-weight: 400;
         }
 
-        .about-list li:before {
+        .about-list li::before {
             content: '→';
             position: absolute;
             left: 0;
-            color: #2b7a9b;
+            color: var(--color-primary);
             font-weight: 700;
         }
 
         #contato {
-            background: white;
+            background: var(--color-bg-white);
         }
 
         .contact-form {
@@ -336,10 +396,10 @@
 
         .form-group label {
             display: block;
-            margin-bottom: 8px;
-            color: #2d3436;
+            margin-bottom: var(--spacing-xs);
+            color: var(--color-text);
             font-weight: 600;
-            font-size: 12px;
+            font-size: var(--font-size-xs);
             letter-spacing: 0.4px;
             text-transform: uppercase;
         }
@@ -348,34 +408,69 @@
         .form-group textarea {
             width: 100%;
             padding: 13px 16px;
-            border: 1.5px solid #e0e0e0;
-            border-radius: 8px;
+            border: 1.5px solid var(--color-border);
+            border-radius: var(--radius-md);
             font-family: 'Poppins', sans-serif;
-            color: #2d3436;
-            font-size: 13px;
-            background: #fafbfc;
-            transition: all 0.3s ease;
+            color: var(--color-text);
+            font-size: var(--font-size-sm);
+            background: var(--color-bg);
+            transition: border-color var(--transition-default), background var(--transition-default), box-shadow var(--transition-default);
+            appearance: none;
         }
 
         .form-group input:focus,
         .form-group textarea:focus {
             outline: none;
-            border-color: #2b7a9b;
-            background: white;
+            border-color: var(--color-primary);
+            background: var(--color-bg-white);
             box-shadow: 0 0 0 4px rgba(43, 122, 155, 0.08);
+        }
+
+        .form-group textarea {
+            resize: vertical;
         }
 
         footer {
             background: #2d3436;
-            color: #bdc3c7;
+            color: #929fa5;
             text-align: center;
-            padding: 40px 80px;
-            font-size: 13px;
+            padding: var(--spacing-lg) var(--spacing-xl);
+            font-size: var(--font-size-sm);
+        }
+
+        @media (max-width: 1200px) {
+            :root {
+                --spacing-xl: 60px;
+            }
+
+            header {
+                padding: var(--spacing-sm) var(--spacing-xl);
+            }
+
+            nav {
+                gap: 35px;
+            }
         }
 
         @media (max-width: 1024px) {
-            .hero, section {
-                padding: 80px 40px;
+            :root {
+                --spacing-xl: 40px;
+                --font-size-2xl: 48px;
+                --font-size-xl: 36px;
+            }
+
+            header {
+                padding: var(--spacing-sm) var(--spacing-xl);
+            }
+
+            nav {
+                gap: 25px;
+                font-size: 12px;
+            }
+
+            .hero,
+            section {
+                padding: 80px var(--spacing-xl);
             }
 
             .hero {
@@ -383,8 +478,108 @@
                 gap: 50px;
             }
 
-            .products-grid, .about-grid {
+            .products-grid,
+            .about-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .products-grid {
+                gap: var(--spacing-lg);
+            }
+        }
+
+        @media (max-width: 768px) {
+            :root {
+                --spacing-xl: 24px;
+                --spacing-lg: 30px;
+                --font-size-2xl: 40px;
+                --font-size-xl: 32px;
+                --font-size-lg: 16px;
+            }
+
+            header {
+                padding: var(--spacing-sm) var(--spacing-xl);
+                flex-wrap: wrap;
+            }
+
+            .logo img {
+                height: 40px;
+            }
+
+            nav {
+                gap: 20px;
+                order: 3;
+                width: 100%;
+                margin-top: var(--spacing-sm);
+                font-size: 12px;
+            }
+
+            .header-right {
+                gap: var(--spacing-md);
+            }
+
+            .hero-left h1 {
+                font-size: 32px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+
+            .product-card {
+                padding: 32px 24px;
+            }
+
+            .about-text h3 {
+                margin-top: 24px;
+            }
+
+            footer {
+                padding: var(--spacing-md) var(--spacing-xl);
+            }
+        }
+
+        @media (max-width: 480px) {
+            :root {
+                --spacing-xl: 16px;
+                --spacing-lg: 20px;
+                --spacing-md: 16px;
+                --font-size-2xl: 32px;
+                --font-size-xl: 24px;
+            }
+
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            nav {
+                order: 3;
+                width: 100%;
+                flex-direction: column;
+                gap: var(--spacing-sm);
+                margin-top: var(--spacing-md);
+            }
+
+            .hero-left h1 {
+                font-size: 28px;
+            }
+
+            .product-card {
+                padding: 24px 16px;
+            }
+
+            .social a {
+                width: 36px;
+                height: 36px;
+            }
+
+            .contact-form {
+                padding: 0 var(--spacing-sm);
             }
         }
     </style>
@@ -402,9 +597,9 @@
         </nav>
         <div class="header-right">
             <div class="social">
-                <a href="https://www.instagram.com/leo.gaiolas/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-                <a href="https://www.tiktok.com/@leogaiolas" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
-                <a href="https://wa.me/c/5512991064130" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://www.instagram.com/leo.gaiolas/" target="_blank" rel="noopener noreferrer" title="Siga-nos no Instagram" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.tiktok.com/@leogaiolas" target="_blank" rel="noopener noreferrer" title="Acompanhe no TikTok" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                <a href="https://wa.me/c/5512991064130" target="_blank" rel="noopener noreferrer" title="Converse conosco no WhatsApp" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
             </div>
             <div class="cart">🛒</div>
         </div>
@@ -462,7 +657,7 @@
                     <li>Garantia de satisfação</li>
                 </ul>
             </div>
-            <div style="text-align: center; font-size: 100px;">
+            <div class="about-image" aria-label="Qualidade garantida">
                 🏆
             </div>
         </div>
@@ -472,7 +667,7 @@
         <h2>Contato</h2>
         <p class="section-subtitle">Entre em contato conosco para mais informações</p>
 
-        <form class="contact-form">
+        <form class="contact-form" method="POST" action="https://formspree.io/f/xyzabc123" novalidate>
             <div class="form-group">
                 <label for="nome">Nome</label>
                 <input type="text" id="nome" name="nome" required>
@@ -493,7 +688,7 @@
                 <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
             </div>
 
-            <button type="submit" class="btn btn-primary" style="width: 100%; padding: 14px 34px;">Enviar Mensagem</button>
+            <button type="submit" class="btn btn-primary btn-full-width">Enviar Mensagem</button>
         </form>
     </section>
 
