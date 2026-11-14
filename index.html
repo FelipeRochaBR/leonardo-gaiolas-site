@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Leonardo Gaiolas - Desde 2004 | Tudo para suas aves</title>
+    <title>Leo Gaiolas - Desde 2004 | Tudo para suas aves</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <style>
@@ -87,24 +87,41 @@
         }
 
         .social a {
-            color: #2d3436;
-            font-size: 14px;
+            font-size: 16px;
             transition: all 0.3s ease;
-            width: 36px;
-            height: 36px;
+            width: 40px;
+            height: 40px;
             display: flex;
             align-items: center;
             justify-content: center;
             border-radius: 50%;
-            background: transparent;
-            border: 1px solid #e0e0e0;
+            background: white;
+            border: 2px solid #e0e0e0;
+            color: #2d3436;
         }
 
-        .social a:hover {
+        .social a[href*="instagram"]:hover {
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+            border-color: #c13584;
             color: white;
-            background: #2b7a9b;
-            border-color: #2b7a9b;
-            transform: translateY(-2px);
+            transform: translateY(-3px) scale(1.1);
+            box-shadow: 0 8px 20px rgba(193, 53, 132, 0.3);
+        }
+
+        .social a[href*="tiktok"]:hover {
+            background: linear-gradient(135deg, #25F4EE 0%, #6A5ACD 100%);
+            border-color: #25F4EE;
+            color: white;
+            transform: translateY(-3px) scale(1.1);
+            box-shadow: 0 8px 20px rgba(37, 244, 238, 0.3);
+        }
+
+        .social a[href*="whatsapp"]:hover {
+            background: #25D366;
+            border-color: #25D366;
+            color: white;
+            transform: translateY(-3px) scale(1.1);
+            box-shadow: 0 8px 20px rgba(37, 211, 102, 0.3);
         }
 
         .cart {
@@ -375,7 +392,7 @@
 <body>
     <header>
         <div class="logo">
-            <img src="logo.png" alt="Leonardo Gaiolas">
+            <img src="logo.png" alt="Leo Gaiolas">
         </div>
         <nav>
             <a href="#inicio">Início</a>
@@ -385,10 +402,9 @@
         </nav>
         <div class="header-right">
             <div class="social">
-                <a href="#" title="Facebook"><i class="fab fa-facebook"></i></a>
-                <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
-                <a href="#" title="TikTok"><i class="fab fa-tiktok"></i></a>
-                <a href="#" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://www.instagram.com/leo.gaiolas/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.tiktok.com/@leogaiolas" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
+                <a href="https://wa.me/c/5512991064130" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
             </div>
             <div class="cart">🛒</div>
         </div>
@@ -435,7 +451,7 @@
         <div class="about-grid">
             <div class="about-text">
                 <h2>Sobre nós</h2>
-                <p>A Leonardo Gaiolas é a referência em produtos para passarinheiros desde 2004. Com mais de 20 anos de experiência, oferecemos as melhores soluções para o cuidado e conforto das suas aves.</p>
+                <p>A Leo Gaiolas é a referência em produtos para passarinheiros desde 2004. Com mais de 20 anos de experiência, oferecemos as melhores soluções para o cuidado e conforto das suas aves.</p>
 
                 <h3>Por que escolher a gente?</h3>
                 <ul class="about-list">
@@ -482,7 +498,7 @@
     </section>
 
     <footer>
-        <p>&copy; 2026 Leonardo Gaiolas. Todos os direitos reservados. Desde 2004.</p>
+        <p>&copy; 2026 Leo Gaiolas. Todos os direitos reservados. Desde 2004.</p>
     </footer>
 </body>
 </html>
