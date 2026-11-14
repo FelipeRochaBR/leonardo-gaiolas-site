@@ -3,125 +3,486 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Leonardo Gaiolas - Gaiolas de Qualidade</title>
+    <title>Leonardo Gaiolas - Desde 2004 | Tudo para suas aves</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
-            font-family: 'Arial', sans-serif;
-            color: #333;
+            font-family: 'Poppins', sans-serif;
+            color: #2d3436;
+            background: #fafbfc;
+            line-height: 1.6;
         }
-        
+
         header {
-            background: #fff;
-            padding: 20px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            background: white;
+            padding: 16px 80px;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            border-bottom: 1px solid #f0f0f0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
-        
+
         .logo {
             display: flex;
             align-items: center;
-            gap: 10px;
-            font-weight: bold;
-            font-size: 18px;
+            gap: 16px;
         }
-        
+
+        .logo img {
+            height: 50px;
+            width: auto;
+        }
+
         nav {
             display: flex;
-            gap: 30px;
+            gap: 50px;
+            flex: 1;
+            justify-content: center;
         }
-        
+
         nav a {
             text-decoration: none;
-            color: #333;
+            color: #2d3436;
+            font-size: 13px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            letter-spacing: 0.5px;
+            position: relative;
         }
-        
-        nav a:hover {
-            color: #0066cc;
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #2b7a9b;
+            transition: width 0.3s ease;
         }
-        
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .header-right {
+            display: flex;
+            gap: 24px;
+            align-items: center;
+        }
+
         .social {
             display: flex;
-            gap: 15px;
+            gap: 10px;
         }
-        
+
         .social a {
-            text-decoration: none;
-            color: #666;
+            color: #2d3436;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: transparent;
+            border: 1px solid #e0e0e0;
         }
-        
+
+        .social a:hover {
+            color: white;
+            background: #2b7a9b;
+            border-color: #2b7a9b;
+            transform: translateY(-2px);
+        }
+
+        .cart {
+            font-size: 18px;
+            color: #2d3436;
+            cursor: pointer;
+        }
+
         .hero {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 100px 20px;
-            text-align: center;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 100px;
+            align-items: center;
+            padding: 140px 80px;
+            background: linear-gradient(135deg, #fafbfc 0%, #f5f8fb 100%);
         }
-        
-        .hero h1 {
+
+        .hero-left h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 64px;
+            color: #2d3436;
+            margin-bottom: 24px;
+            line-height: 1.15;
+            font-weight: 700;
+        }
+
+        .hero-left p {
+            font-size: 15px;
+            color: #636e72;
+            margin-bottom: 45px;
+            line-height: 1.9;
+            font-weight: 400;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+        }
+
+        .btn {
+            padding: 14px 34px;
+            border: none;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            letter-spacing: 0.4px;
+        }
+
+        .btn-primary {
+            background: #2b7a9b;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #1f5a75;
+            transform: translateY(-4px);
+            box-shadow: 0 12px 32px rgba(43, 122, 155, 0.25);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: #2b7a9b;
+            border: 2px solid #2b7a9b;
+        }
+
+        .btn-secondary:hover {
+            background: #2b7a9b;
+            color: white;
+            transform: translateY(-4px);
+            box-shadow: 0 12px 32px rgba(43, 122, 155, 0.15);
+        }
+
+        .hero-right {
+            width: 100%;
+            height: 480px;
+            background: linear-gradient(135deg, #e8ddd0 0%, #f5efe6 100%);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: #d4c4b0;
+            font-weight: 500;
+        }
+
+        section {
+            padding: 120px 80px;
+        }
+
+        section h2 {
+            font-family: 'Playfair Display', serif;
             font-size: 48px;
-            margin-bottom: 20px;
+            color: #2d3436;
+            margin-bottom: 12px;
+            font-weight: 700;
         }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 40px 20px;
+
+        .section-subtitle {
+            font-size: 15px;
+            color: #636e72;
+            margin-bottom: 70px;
+            font-weight: 400;
         }
-        
-        footer {
-            background: #333;
-            color: white;
+
+        #produtos {
+            background: white;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
+
+        .product-card {
             text-align: center;
-            padding: 20px;
+            padding: 48px 32px;
+            border-radius: 14px;
+            background: #fafbfc;
+            transition: all 0.3s ease;
+            border: 1px solid #f0f0f0;
+        }
+
+        .product-card:hover {
+            background: white;
+            transform: translateY(-12px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+            border-color: #2b7a9b;
+        }
+
+        .product-icon {
+            font-size: 56px;
+            margin-bottom: 24px;
+        }
+
+        .product-card h3 {
+            color: #2d3436;
+            margin-bottom: 14px;
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .product-card p {
+            color: #636e72;
+            font-size: 13px;
+            line-height: 1.9;
+        }
+
+        #sobre {
+            background: #fafbfc;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 100px;
+            align-items: center;
+        }
+
+        .about-text p {
+            margin-bottom: 22px;
+            color: #636e72;
+            font-size: 15px;
+            line-height: 1.9;
+        }
+
+        .about-text h3 {
+            color: #2d3436;
+            margin-top: 38px;
+            margin-bottom: 22px;
+            font-weight: 600;
+            font-size: 17px;
+        }
+
+        .about-list {
+            list-style: none;
+        }
+
+        .about-list li {
+            padding: 11px 0;
+            padding-left: 32px;
+            position: relative;
+            color: #636e72;
+            font-size: 14px;
+            font-weight: 400;
+        }
+
+        .about-list li:before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: #2b7a9b;
+            font-weight: 700;
+        }
+
+        #contato {
+            background: white;
+        }
+
+        .contact-form {
+            max-width: 580px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 26px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #2d3436;
+            font-weight: 600;
+            font-size: 12px;
+            letter-spacing: 0.4px;
+            text-transform: uppercase;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 13px 16px;
+            border: 1.5px solid #e0e0e0;
+            border-radius: 8px;
+            font-family: 'Poppins', sans-serif;
+            color: #2d3436;
+            font-size: 13px;
+            background: #fafbfc;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #2b7a9b;
+            background: white;
+            box-shadow: 0 0 0 4px rgba(43, 122, 155, 0.08);
+        }
+
+        footer {
+            background: #2d3436;
+            color: #bdc3c7;
+            text-align: center;
+            padding: 40px 80px;
+            font-size: 13px;
+        }
+
+        @media (max-width: 1024px) {
+            .hero, section {
+                padding: 80px 40px;
+            }
+
+            .hero {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+
+            .products-grid, .about-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
     <header>
-        <div class="logo">🦅 Leonardo Gaiolas</div>
+        <div class="logo">
+            <img src="logo.png" alt="Leonardo Gaiolas">
+        </div>
         <nav>
             <a href="#inicio">Início</a>
-            <a href="#produtos">Produtos</a>
-            <a href="#sobre">Sobre</a>
+            <a href="#produtos">Lista de Produtos</a>
+            <a href="#sobre">Sobre nós</a>
             <a href="#contato">Contato</a>
         </nav>
-        <div class="social">
-            <a href="#">f</a>
-            <a href="#">📷</a>
-            <a href="#">🎵</a>
-            <a href="#">💬</a>
+        <div class="header-right">
+            <div class="social">
+                <a href="#" title="Facebook"><i class="fab fa-facebook"></i></a>
+                <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" title="TikTok"><i class="fab fa-tiktok"></i></a>
+                <a href="#" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            </div>
+            <div class="cart">🛒</div>
         </div>
     </header>
-    
+
     <section class="hero" id="inicio">
-        <h1>Bem-vindo à Leonardo Gaiolas</h1>
-        <p>As melhores gaiolas para seus pássaros</p>
+        <div class="hero-left">
+            <h1>Tudo para o cuidado das suas aves</h1>
+            <p>Gaiolas, poleiros, rações e acessórios para passarinheiros que entendem de qualidade.</p>
+            <div class="hero-buttons">
+                <a href="#produtos" class="btn btn-primary">Conheça nossos produtos</a>
+                <a href="#contato" class="btn btn-secondary">WhatsApp</a>
+            </div>
+        </div>
+        <div class="hero-right">
+            📷 Sua imagem aqui
+        </div>
     </section>
-    
-    <section class="container" id="produtos">
-        <h2>Nossos Produtos</h2>
-        <p>Gaiolas de alta qualidade com os melhores materiais</p>
+
+    <section id="produtos">
+        <h2>Lista de Produtos</h2>
+        <p class="section-subtitle">Gaiolas, poleiros, rações e acessórios para passarinheiros</p>
+
+        <div class="products-grid">
+            <div class="product-card">
+                <div class="product-icon">🏠</div>
+                <h3>Gaiolas Premium</h3>
+                <p>Gaiolas de alta qualidade, duráveis e confortáveis para suas aves.</p>
+            </div>
+            <div class="product-card">
+                <div class="product-icon">🪵</div>
+                <h3>Poleiros</h3>
+                <p>Poleiros naturais e decorativos para o bem-estar das aves.</p>
+            </div>
+            <div class="product-card">
+                <div class="product-icon">🌾</div>
+                <h3>Rações</h3>
+                <p>Rações balanceadas e nutritivas para todas as espécies.</p>
+            </div>
+        </div>
     </section>
-    
-    <section class="container" id="sobre">
-        <h2>Sobre Nós</h2>
-        <p>Somos especialistas em gaiolas desde 1995</p>
+
+    <section id="sobre">
+        <div class="about-grid">
+            <div class="about-text">
+                <h2>Sobre nós</h2>
+                <p>A Leonardo Gaiolas é a referência em produtos para passarinheiros desde 2004. Com mais de 20 anos de experiência, oferecemos as melhores soluções para o cuidado e conforto das suas aves.</p>
+
+                <h3>Por que escolher a gente?</h3>
+                <ul class="about-list">
+                    <li>Produtos de qualidade comprovada</li>
+                    <li>Mais de 20 anos de experiência</li>
+                    <li>Atendimento personalizado</li>
+                    <li>Preços competitivos</li>
+                    <li>Garantia de satisfação</li>
+                </ul>
+            </div>
+            <div style="text-align: center; font-size: 100px;">
+                🏆
+            </div>
+        </div>
     </section>
-    
-    <section class="container" id="contato">
+
+    <section id="contato">
         <h2>Contato</h2>
-        <p>Entre em contato conosco para mais informações</p>
+        <p class="section-subtitle">Entre em contato conosco para mais informações</p>
+
+        <form class="contact-form">
+            <div class="form-group">
+                <label for="nome">Nome</label>
+                <input type="text" id="nome" name="nome" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">E-mail</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="telefone">Telefone / WhatsApp</label>
+                <input type="tel" id="telefone" name="telefone">
+            </div>
+
+            <div class="form-group">
+                <label for="mensagem">Mensagem</label>
+                <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="width: 100%; padding: 14px 34px;">Enviar Mensagem</button>
+        </form>
     </section>
-    
+
     <footer>
-        <p>&copy; 2026 Leonardo Gaiolas. Todos os direitos reservados.</p>
+        <p>&copy; 2026 Leonardo Gaiolas. Todos os direitos reservados. Desde 2004.</p>
     </footer>
 </body>
 </html>
